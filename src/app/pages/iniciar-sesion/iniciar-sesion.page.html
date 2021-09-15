@@ -1,9 +1,29 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>IniciarSesion</ion-title>
+    <ion-title>Iniciar Sesión</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content [fullscreen]="true">
+  <div class="titulo">Formulario Ingreso de Datos</div>
 
+  <div class="contenido">
+
+    <!-- Se guarde al enviar mediante submit-->
+    <form action="#" method="POST" [formGroup]="usuario" (ngSubmit)="iniciarSesion()">
+      <!-- Etiqueta Flotante -->
+      <!-- inputs de formulario -->
+      <ion-item>
+        <ion-label position="floating">Nombre Usuario</ion-label>
+        <ion-input placeholder="Ingrese su Nombre de Usuario" formControlName="formControlUser"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Contraseña</ion-label>
+        <ion-input type="password" placeholder="Ingrese su Contraseña" formControlName="formControlPass"></ion-input>
+      </ion-item>
+      <!-- Botones de formulario -->
+      <ion-button color="success" type="submit" >Iniciar Sesión</ion-button>
+    </form>
+  </div>
 </ion-content>
