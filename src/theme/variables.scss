@@ -2,7 +2,25 @@
 // http://ionicframework.com/docs/theming/
 
 /** Ionic CSS Variables **/
+
+
+/** Paleta de colores de la APP   **/
+
 :root {
+
+  /** Colores VIVO DUOC **/
+  --ion-color-primario:#fcb720;
+  --ion-color-primario-claro:#fed500;
+  --ion-color-secundario:#012c56;
+  --ion-color-terciario:#fe6d00;
+  --ion-color-hover: #5a80a5;
+  --ion-color-negro:#000;
+  --ion-color-blanco:#fff;
+  --ion-color-gris:#1e252a;
+  --ion-color-gris-oscuro:#121212;
+  
+
+
   /** primary **/
   --ion-color-primary: #3880ff;
   --ion-color-primary-rgb: 56, 128, 255;
