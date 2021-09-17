@@ -9,7 +9,8 @@
   <div class="contenedor">
     <div class="titulo">Formulario Ingreso de Datos</div>
     <!-- Se guarde al enviar mediante submit-->
-    <form class="formulario-login" action="#" method="POST" [formGroup]="loginForm" (ngSubmit)="iniciarSesion(loginForm.value)">
+    <form class="formulario-login" action="#" method="POST" [formGroup]="loginForm"
+      (ngSubmit)="iniciarSesion(loginForm.value)">
       <!-- Etiqueta Flotante -->
       <!-- inputs de formulario -->
       <ion-item class="formulario-login__item">
@@ -21,27 +22,49 @@
 
       <ion-item class="formulario-login__item">
         <ion-label class="formulario-login__label" position="floating">Contraseña</ion-label>
-        <ion-input class="formulario-login__input" type="password" placeholder="Ingrese su Contraseña" formControlName="password" >
-          <ion-icon name="lock-closed-sharp"></ion-icon>
+        <ion-input class="formulario-login__input" type="password" placeholder="Ingrese su Contraseña" formControlName="password">
+          <ion-icon *ngIf="password.invalid && (password.dirty || password.touched)" color="danger" size="small" name="warning" ></ion-icon>
+          <ion-icon *ngIf="password.valid" color="secondary" size="small" name="checkmark-circle" ></ion-icon>
         </ion-input>
       </ion-item>
 
       <!-- Alerta Mensaje Error -->
+      <!-- Se activa si la pass es inválida y si no haces nada o ensucias la text box-->
       <div class="alerta-error" *ngIf="password.invalid && (password.dirty || password.touched)">
+
         <div class="mensaje-error" *ngIf="password.errors.required">
           La contraseña es requerida.
         </div>
+
         <div class="mensaje-error" *ngIf="password.errors.minlength">
           La contraseña debe tener al menos 8 carácteres.
+        </div>
+
+        <div class="mensaje-error" *ngIf="password.errors.maxlength">
+          La contraseña no debe superar los 20 carácteres.
+        </div>
+
+        <div class="mensaje-error" *ngIf="password.errors.pattern">
+          Contraseña inválida.
+        </div>
+
+      </div>
+
+      <!--- Contraseña Válida -->
+      <div class="alerta-error" *ngIf="password.valid && (password.dirty || password.touched)">
+
+        <div class="mensaje-error">
+          Valido
         </div>
       </div>
 
       <!-- Botones de formulario -->
-      <ion-button class="boton-primario" icon-left type="submit" [disabled] = "!loginForm.valid">
+      <ion-button class="boton-primario" icon-left type="submit" [disabled]="!loginForm.valid">
         <ion-icon name="bed-outline"></ion-icon>
-        Iniciar Sesión 
-    </ion-button>
+        Iniciar Sesión
+      </ion-button>
     </form>
+
   </div>
 
   <ion-footer>
