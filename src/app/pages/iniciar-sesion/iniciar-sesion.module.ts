@@ -1,13 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-// Importamos FormsModule y ReactiveFormsModule
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
 import { IonicModule } from '@ionic/angular';
-
 import { IniciarSesionPageRoutingModule } from './iniciar-sesion-routing.module';
-
 import { IniciarSesionPage } from './iniciar-sesion.page';
+
+// Importamos FormsModule y ReactiveFormsModule
+import { AppFormulariosModule } from 'src/app/app-formularios.module';
 
 @NgModule({
   imports: [
@@ -15,8 +13,7 @@ import { IniciarSesionPage } from './iniciar-sesion.page';
     IonicModule,
     IniciarSesionPageRoutingModule,
     //Importamos ReactiveForms y FormsModule
-    FormsModule, 
-    ReactiveFormsModule,
+    AppFormulariosModule
   ],
   declarations: [IniciarSesionPage]
 })

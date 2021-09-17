@@ -9,24 +9,35 @@
   <div class="contenedor">
     <div class="titulo">Formulario Ingreso de Datos</div>
     <!-- Se guarde al enviar mediante submit-->
-    <form class="formulario-login" action="#" method="POST" [formGroup]="usuario" (ngSubmit)="iniciarSesion()">
+    <form class="formulario-login" action="#" method="POST" [formGroup]="loginForm" (ngSubmit)="iniciarSesion(loginForm.value)">
       <!-- Etiqueta Flotante -->
       <!-- inputs de formulario -->
       <ion-item class="formulario-login__item">
         <ion-label class="formulario-login__label" position="floating">Nombre Usuario</ion-label>
-        <ion-input class="formulario-login__input" placeholder="Ingrese su Nombre de Usuario" formControlName="formControlUser">
+        <ion-input class="formulario-login__input" placeholder="Ingrese su Nombre de Usuario" formControlName="username">
           <ion-icon name="person-sharp"></ion-icon>
         </ion-input>
       </ion-item>
 
       <ion-item class="formulario-login__item">
         <ion-label class="formulario-login__label" position="floating">Contraseña</ion-label>
-        <ion-input class="formulario-login__input" type="password" placeholder="Ingrese su Contraseña" formControlName="formControlPass" >
+        <ion-input class="formulario-login__input" type="password" placeholder="Ingrese su Contraseña" formControlName="password" >
           <ion-icon name="lock-closed-sharp"></ion-icon>
         </ion-input>
       </ion-item>
+
+      <!-- Alerta Mensaje Error -->
+      <div class="alerta-error" *ngIf="password.invalid && (password.dirty || password.touched)">
+        <div class="mensaje-error" *ngIf="password.errors.required">
+          La contraseña es requerida.
+        </div>
+        <div class="mensaje-error" *ngIf="password.errors.minlength">
+          La contraseña debe tener al menos 8 carácteres.
+        </div>
+      </div>
+
       <!-- Botones de formulario -->
-      <ion-button class="boton-primario" icon-left type="submit" >
+      <ion-button class="boton-primario" icon-left type="submit" [disabled] = "!loginForm.valid">
         <ion-icon name="bed-outline"></ion-icon>
         Iniciar Sesión 
     </ion-button>

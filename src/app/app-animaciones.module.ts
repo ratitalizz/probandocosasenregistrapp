@@ -5,7 +5,7 @@ import { CommonModule } from '@angular/common';
 // Copia de todos los Modulos para hacer Animaciones con Angular Material
 /////////////////////////////////////////////////////////////////////////////////////////////
 
-// Para poder usar este archivo importo AppModuleModule
+// Para poder usar este archivo importo app-animacionesmodule
 import {A11yModule} from '@angular/cdk/a11y';
 import {ClipboardModule} from '@angular/cdk/clipboard';
 import {DragDropModule} from '@angular/cdk/drag-drop';
@@ -104,4 +104,4 @@ import {OverlayModule} from '@angular/cdk/overlay';
     ScrollingModule,
   ]
 })
-export class AppModuleModule { }
+export class AppAnimacionesModule { }

@@ -16,3 +16,14 @@
   .boton-primario{
     color: var(--ion-color-blanco);
   }
+
+  .alerta-error{
+    color: #721c24;
+    background: #f8d7da;
+    border-color: #f5c6cb;
+    margin-bottom: 5px;
+  }
+
+  .mensaje-error{
+    padding: 3px;
+  }
