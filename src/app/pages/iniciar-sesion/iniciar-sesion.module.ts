@@ -13,7 +13,7 @@ import { AppFormulariosModule } from 'src/app/app-formularios.module';
     IonicModule,
     IniciarSesionPageRoutingModule,
     //Importamos ReactiveForms y FormsModule
-    AppFormulariosModule
+    AppFormulariosModule,
   ],
   declarations: [IniciarSesionPage]
 })

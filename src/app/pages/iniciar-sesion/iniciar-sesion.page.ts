@@ -9,6 +9,12 @@ import { NavController } from '@ionic/angular';
 //Importamos el componente de Routers
 import { Router } from '@angular/router';
 
+// Import Toast
+import { ToastController } from '@ionic/angular';
+
+//Importamos el Alert 
+import { AlertController } from '@ionic/angular';
+
 @Component({
   selector: 'app-iniciar-sesion',
   templateUrl: './iniciar-sesion.page.html',
@@ -29,7 +35,9 @@ export class IniciarSesionPage{
   constructor(
     private router: Router, 
     private navControl: NavController, 
-    private formBuilder: FormBuilder 
+    private formBuilder: FormBuilder,
+    public toastController: ToastController,
+    public alertController: AlertController,
     ) 
   { 
     this.loginForm = this.formBuilder.group({
@@ -60,6 +68,59 @@ export class IniciarSesionPage{
     });
   }
 
+    // Función asincróna para personalizar mi Toast e invocarlo
+    async toastAlert(titulo, mensaje, duracion){
+      const toast = await this.toastController.create({
+        header: titulo,
+        message: mensaje,
+        duration: duracion,
+        position: 'top',
+        animated: true,
+        translucent: false
+      });
+      toast.present();
+    }
+    ////////////////////////////////////////
+    // Funciones de alertas
+    ////////////////////////////////////////
+
+    // Alerta de confirmación
+    async messageAlert(){
+      const alert = await this.alertController.create({
+        header:"Holi",
+        message: "a",
+        buttons: ["OK"],
+      })
+      await alert.present();
+      //Que se cierre cuando aprete el botón
+      await alert.onDidDismiss();
+    }
+
+    // Alerta de eliminación (True, False)
+    async messageAlert2(){
+      const alert = await this.alertController.create({
+        header:"Eliminar",
+        message: "¿Estás seguro?",
+        buttons: [
+          {
+            text:'No',
+            handler:() => {
+              console.log("Cancelar");
+          }
+        },
+          {
+            text:'Sí',
+            handler:() => {
+              console.log("Eliminada");
+          }
+        }
+      ]
+      });
+      await alert.present();
+      //Que se cierre cuando aprete el botón
+      await alert.onDidDismiss();
+    }
+
   limpiarCampos(){
     //Resetea Formulario
     this.loginForm.reset();
@@ -69,6 +130,8 @@ export class IniciarSesionPage{
     if(this.loginForm.valid){
       console.log('Válido');
       this.limpiarCampos();
+      // Nos redirige a la Página de Inicio
+      this.router.navigate(['/inicio'])
     }else{
       console.log('No válido');
     }
@@ -79,13 +142,16 @@ export class IniciarSesionPage{
   iniciarSesion(){
     // Falta validar 
     this.validarLogin();
-    // Nos redirige a la Página de Inicio
-    //this.router.navigate(['/inicio'])
   }
 
   // Agrego métodos get para validar el Formulario
   get username(){ return this.loginForm.get('username'); }
   get password(){ return this.loginForm.get('password'); }
+
+
+
+
+
 
   /*
 
@@ -108,8 +174,12 @@ export class IniciarSesionPage{
         alert(errors.join("\n"));
         return false;
     }
+
     return true;
-}
+
+    }
+   
+    
   */
 
 }

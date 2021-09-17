@@ -16,13 +16,36 @@
       <ion-item class="formulario-login__item">
         <ion-label class="formulario-login__label" position="floating">Nombre Usuario</ion-label>
         <ion-input class="formulario-login__input" placeholder="Ingrese su Nombre de Usuario" formControlName="username">
-          <ion-icon name="person-sharp"></ion-icon>
+          <ion-icon *ngIf="username.invalid && (username.dirty || username.touched)" color="danger" size="small" name="warning" ></ion-icon>
+          <ion-icon *ngIf="username.valid" color="secondary" size="small" name="checkmark-circle" ></ion-icon>
         </ion-input>
       </ion-item>
 
+      <!-- Alerta Mensaje Error -->
+      <!-- Se activa si la pass es inválida y si no haces nada o ensucias la text box-->
+      <div class="alerta-error" *ngIf="username.invalid && (username.dirty || username.touched)">
+
+        <div class="mensaje-error" *ngIf="username.errors.required">
+          El nombre de usuario es requerido.*
+        </div>
+
+        <div class="mensaje-error" *ngIf="username.errors.minlength">
+          El nombre de usuario debe tener al menos 8 carácteres.*
+        </div>
+
+        <div class="mensaje-error" *ngIf="username.errors.maxlength">
+          El nombre de usuario no debe superar los 20 carácteres.*
+        </div>
+
+        <div class="mensaje-error" *ngIf="username.errors.pattern">
+          Nombre de usuario inválido.*
+        </div>
+
+      </div>
+      
       <ion-item class="formulario-login__item">
         <ion-label class="formulario-login__label" position="floating">Contraseña</ion-label>
-        <ion-input class="formulario-login__input" type="password" placeholder="Ingrese su Contraseña" formControlName="password">
+        <ion-input class="formulario-login__input" type="password" placeholder="Ingrese su Contraseña" formControlName="password" >
           <ion-icon *ngIf="password.invalid && (password.dirty || password.touched)" color="danger" size="small" name="warning" ></ion-icon>
           <ion-icon *ngIf="password.valid" color="secondary" size="small" name="checkmark-circle" ></ion-icon>
         </ion-input>
@@ -33,37 +56,40 @@
       <div class="alerta-error" *ngIf="password.invalid && (password.dirty || password.touched)">
 
         <div class="mensaje-error" *ngIf="password.errors.required">
-          La contraseña es requerida.
+          La contraseña es requerida.*
         </div>
 
         <div class="mensaje-error" *ngIf="password.errors.minlength">
-          La contraseña debe tener al menos 8 carácteres.
+          La contraseña debe tener al menos 8 carácteres.*
         </div>
 
         <div class="mensaje-error" *ngIf="password.errors.maxlength">
-          La contraseña no debe superar los 20 carácteres.
+          La contraseña no debe superar los 20 carácteres.*
         </div>
 
         <div class="mensaje-error" *ngIf="password.errors.pattern">
-          Contraseña inválida.
+          Contraseña inválida.*
         </div>
 
-      </div>
-
-      <!--- Contraseña Válida -->
-      <div class="alerta-error" *ngIf="password.valid && (password.dirty || password.touched)">
-
-        <div class="mensaje-error">
-          Valido
-        </div>
       </div>
 
       <!-- Botones de formulario -->
       <ion-button class="boton-primario" icon-left type="submit" [disabled]="!loginForm.valid">
         <ion-icon name="bed-outline"></ion-icon>
+        <!-- *ngIf="password.valid && username.valid" 
+        
+          Pienso cambiar el color del botón al hacer válido el form
+        -->
         Iniciar Sesión
       </ion-button>
     </form>
+
+    <!-- Sección olvidó su pass -->
+    <div>
+      <ion-button (click)="presentAlert()">
+        olvidate
+      </ion-button>
+    </div>
 
   </div>
 
