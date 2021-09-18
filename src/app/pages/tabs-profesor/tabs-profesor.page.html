@@ -1,24 +1,31 @@
+<!-- Menú Toolbar para cerrar sesión -->
+<ion-toolbar>
+  <ion-buttons slot="primary">
+    <ion-button [routerLink]="['/iniciar-sesion']">
+      <ion-icon slot="icon-only" name="ellipsis-vertical"></ion-icon>
+    </ion-button>
+  </ion-buttons>
+  <ion-title>Portal Docentes</ion-title>
+</ion-toolbar>
+
 <ion-tabs>
+
   <ion-tab-bar slot="bottom">
-    <ion-tab-button tab="asistencia">
-      <ion-icon name="calendar"></ion-icon>
+    <ion-tab-button tab="codigo-qr">
+      <ion-icon name="cellular"></ion-icon>
       <ion-label>asistencia</ion-label>
       <ion-badge>6</ion-badge>
     </ion-tab-button>
 
     <ion-tab-button tab="inicio">
-      <ion-icon name="person-circle"></ion-icon>
+      <ion-icon name="home"></ion-icon>
       <ion-label>inicio</ion-label>
     </ion-tab-button>
 
-    <ion-tab-button tab="map">
-      <ion-icon name="map"></ion-icon>
-      <ion-label>Map</ion-label>
-    </ion-tab-button>
-
     <ion-tab-button tab="about">
-      <ion-icon name="information-circle"></ion-icon>
+      <ion-icon name="analytics"></ion-icon>
       <ion-label>About</ion-label>
     </ion-tab-button>
   </ion-tab-bar>
+
 </ion-tabs>

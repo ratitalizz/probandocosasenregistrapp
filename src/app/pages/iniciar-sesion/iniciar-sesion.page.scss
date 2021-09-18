@@ -18,9 +18,9 @@
   }
 
   .alerta-error{
-    color: #721c24;
-    background: #f8d7da;
-    border-color: #f5c6cb;
+    color: var(--ion-color-texto-alerta);
+    background: var(--ion-color-fondo-alerta);
+    border-color: var(--ion-color-borde-alerta);
     margin-bottom: 5px;
   }
 

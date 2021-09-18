@@ -9,8 +9,7 @@
   <div class="contenedor">
     <div class="titulo">Formulario Ingreso de Datos</div>
     <!-- Se guarde al enviar mediante submit-->
-    <form class="formulario-login" action="#" method="POST" [formGroup]="loginForm"
-      (ngSubmit)="iniciarSesion(loginForm.value)">
+    <form class="formulario-login" action="#" method="POST" [formGroup]="loginForm" (ngSubmit)="iniciarSesion(loginForm.value)">
       <!-- Etiqueta Flotante -->
       <!-- inputs de formulario -->
       <ion-item class="formulario-login__item">
@@ -74,7 +73,7 @@
       </div>
 
       <!-- Botones de formulario -->
-      <ion-button class="boton-primario" icon-left type="submit" [disabled]="!loginForm.valid" fill="outline">
+      <ion-button class="boton-primario" icon-left type="submit" [disabled]="!loginForm.valid">
         <ion-icon name="bed-outline"></ion-icon>
         <!-- *ngIf="password.valid && username.valid" 
         
@@ -87,7 +86,7 @@
     <!-- Sección olvidó su pass -->
     <div>
       <ion-button fill="clear" (click)="recuperarCuenta()">
-        olvidate
+        olvidaste tu pass uwu
       </ion-button>
     </div>
 

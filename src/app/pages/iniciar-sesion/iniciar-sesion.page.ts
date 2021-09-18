@@ -130,9 +130,12 @@ export class IniciarSesionPage{
   // Método que iniciar sesión al clickear el botón
   iniciarSesion(credenciales){
     // Falta validar 
-    if(credenciales.username == "Jorge" && credenciales.password == "RegistrAPP!"){
-      this.router.navigate(['/inicio']);
-    }else{
+    if(credenciales.username == "Jorge" && credenciales.password == "RegistrAPP69!"){
+      this.router.navigate(['/tabs-alumno/inicio']);
+    }else if(credenciales.username == "Freddy" && credenciales.password == "RegistrAPP69!"){
+      this.router.navigate(['/tabs-profesor/inicio']);
+    }
+    else{
       console.log("F");
       this.toastAlert("Credenciales INCORRECTAS", "intentelo de nuevo", 2000);
     }
