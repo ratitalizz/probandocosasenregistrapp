@@ -5,8 +5,37 @@
 </ion-header>
 
 <ion-content>
+  <ion-item>
+    <ion-input type="text" placeholder="Ingrese datos" [(ngModel)]="qrData"></ion-input>
+  </ion-item>
+
+  <button ion-button full icon-left (click)="crearCodigo()">
+    <ion-icon name="barcode"></ion-icon>Crear Código
+  </button>
+
+  <button ion-button full icon-left (click)="scannearCodigo()">
+    <ion-icon name="qr-scanner"></ion-icon>Scannear Código
+  </button>
+
+  <!-- Sección Crear código -->
+  <ion-card *ngIf="codigoCreado">
+    <ngx-qrcode  [elementType]='elementType' [value]="codigoCreado"></ngx-qrcode>
+    <ion-card-content>
+      <p>Valor : {{ codigoCreado }}</p>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card *ngIf="codigoScaneado">
+    <ion-card-content>
+      Resultado del Scan: {{ codigoScaneado }}
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Freddy -->
+  <!--
   <ion-card *ngIf="qrData">
     <ngx-qrcode [elementType]='elementType' [value]="qrData"></ngx-qrcode>
     <ion-input type="text" placeholder="ingrese direccion" [(ngModel)]="qrData"></ion-input>
   </ion-card>
+  -->
 </ion-content>

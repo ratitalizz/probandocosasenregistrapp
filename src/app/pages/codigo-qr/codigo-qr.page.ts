@@ -8,12 +8,29 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner/ngx';
   styleUrls: ['./codigo-qr.page.scss'],
 })
 export class CodigoQRPage implements OnInit {
-  qrData="https://www.youtube.com/watch?v=vfK82zh_rOI";
+  //
+  qrData= null;
+  codigoCreado = null;
+  codigoScaneado = null;
+
   elementType: 'url' | 'img' | 'canvas' = 'canvas'
 
   constructor(private barcodeScanner: BarcodeScanner) { }
 
   ngOnInit() {
+  }
+
+  crearCodigo(){
+    this.codigoCreado = this.qrData;
+  }
+
+  scannearCodigo(){
+    this.barcodeScanner.scan().then
+    (barcodeData => 
+      {
+      this.codigoScaneado = barcodeData.text;
+      }
+    )
   }
 
 }
