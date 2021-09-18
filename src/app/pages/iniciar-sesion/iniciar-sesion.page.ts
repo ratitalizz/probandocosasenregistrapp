@@ -126,60 +126,25 @@ export class IniciarSesionPage{
     this.loginForm.reset();
   }
 
-  validarLogin(){
-    if(this.loginForm.valid){
-      console.log('Válido');
-      this.limpiarCampos();
-      // Nos redirige a la Página de Inicio
-      this.router.navigate(['/inicio'])
-    }else{
-      console.log('No válido');
-    }
-  }
- 
 
   // Método que iniciar sesión al clickear el botón
-  iniciarSesion(){
+  iniciarSesion(credenciales){
     // Falta validar 
-    this.validarLogin();
+    if(credenciales.username == "Jorge" && credenciales.password == "RegistrAPP!"){
+      this.router.navigate(['/inicio']);
+    }else{
+      console.log("F");
+      this.toastAlert("Credenciales INCORRECTAS", "intentelo de nuevo", 2000);
+    }
+  }
+
+  recuperarCuenta(){
+    this.router.navigate(['/recuperar-cuenta'])
   }
 
   // Agrego métodos get para validar el Formulario
   get username(){ return this.loginForm.get('username'); }
   get password(){ return this.loginForm.get('password'); }
 
-
-
-
-
-
-  /*
-
-    VALIDAR
-
-
-    function validatePassword() {
-    var p = document.getElementById('newPassword').value,
-        errors = [];
-    if (p.length < 8) {
-        errors.Push("Your password must be at least 8 characters");
-    }
-    if (p.search(/[a-z]/i) < 0) {
-        errors.Push("Your password must contain at least one letter."); 
-    }
-    if (p.search(/[0-9]/) < 0) {
-        errors.Push("Your password must contain at least one digit.");
-    }
-    if (errors.length > 0) {
-        alert(errors.join("\n"));
-        return false;
-    }
-
-    return true;
-
-    }
-   
-    
-  */
 
 }

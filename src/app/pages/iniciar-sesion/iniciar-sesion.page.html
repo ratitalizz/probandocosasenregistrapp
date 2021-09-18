@@ -30,11 +30,11 @@
         </div>
 
         <div class="mensaje-error" *ngIf="username.errors.minlength">
-          El nombre de usuario debe tener al menos 8 carácteres.*
+          El nombre de usuario debe tener al menos 5 carácteres.*
         </div>
 
         <div class="mensaje-error" *ngIf="username.errors.maxlength">
-          El nombre de usuario no debe superar los 20 carácteres.*
+          El nombre de usuario no debe superar los 10 carácteres.*
         </div>
 
         <div class="mensaje-error" *ngIf="username.errors.pattern">
@@ -45,7 +45,7 @@
       
       <ion-item class="formulario-login__item">
         <ion-label class="formulario-login__label" position="floating">Contraseña</ion-label>
-        <ion-input class="formulario-login__input" type="password" placeholder="Ingrese su Contraseña" formControlName="password" >
+        <ion-input class="formulario-login__input" type="password" placeholder="Ingrese su Contraseña" formControlName="password">
           <ion-icon *ngIf="password.invalid && (password.dirty || password.touched)" color="danger" size="small" name="warning" ></ion-icon>
           <ion-icon *ngIf="password.valid" color="secondary" size="small" name="checkmark-circle" ></ion-icon>
         </ion-input>
@@ -74,7 +74,7 @@
       </div>
 
       <!-- Botones de formulario -->
-      <ion-button class="boton-primario" icon-left type="submit" [disabled]="!loginForm.valid">
+      <ion-button class="boton-primario" icon-left type="submit" [disabled]="!loginForm.valid" fill="outline">
         <ion-icon name="bed-outline"></ion-icon>
         <!-- *ngIf="password.valid && username.valid" 
         
@@ -86,7 +86,7 @@
 
     <!-- Sección olvidó su pass -->
     <div>
-      <ion-button (click)="presentAlert()">
+      <ion-button fill="clear" (click)="recuperarCuenta()">
         olvidate
       </ion-button>
     </div>

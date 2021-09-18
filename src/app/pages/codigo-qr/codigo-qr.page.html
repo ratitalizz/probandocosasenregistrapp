@@ -1,0 +1,12 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>codigoQR</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngIf="qrData">
+    <ngx-qrcode [elementType]='elementType' [value]="qrData"></ngx-qrcode>
+    <ion-input type="text" placeholder="ingrese direccion" [(ngModel)]="qrData"></ion-input>
+  </ion-card>
+</ion-content>
