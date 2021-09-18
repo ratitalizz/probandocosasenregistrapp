@@ -26,6 +26,18 @@ const routes: Routes = [
     path: 'codigo-qr',
     loadChildren: () => import('./pages/codigo-qr/codigo-qr.module').then( m => m.CodigoQRPageModule)
   },
+  {
+    path: 'tabs',
+    loadChildren: () => import('./pages/tabs/tabs.module').then( m => m.TabsPageModule)
+  },
+  {
+    path: 'tabs-alumno',
+    loadChildren: () => import('./pages/tabs-alumno/tabs-alumno.module').then( m => m.TabsAlumnoPageModule)
+  },
+  {
+    path: 'tabs-profesor',
+    loadChildren: () => import('./pages/tabs-profesor/tabs-profesor.module').then( m => m.TabsProfesorPageModule)
+  },
 
 ];
 
