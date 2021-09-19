@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+///
+import { TtsService } from 'src/app/services/tts.service';
 
 @Component({
   selector: 'app-inicio',
@@ -7,7 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InicioPage implements OnInit {
 
-  constructor() { }
+  constructor(private _stts:TtsService) { }
+
+  hablar(esp:string){
+    this._stts.decir(esp);
+  }
 
   ngOnInit() {
   }

@@ -12,6 +12,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner/ngx';
 import { Base64ToGallery } from '@ionic-native/base64-to-gallery/ngx';
 
+//Importar TTS
+import { TextToSpeech } from '@ionic-native/text-to-speech/ngx'
 
 @NgModule({
   declarations: [AppComponent],
@@ -23,7 +25,8 @@ import { Base64ToGallery } from '@ionic-native/base64-to-gallery/ngx';
     BrowserAnimationsModule
   ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
-   ,BarcodeScanner, Base64ToGallery // Importamos las librerias de Code QR
+   ,BarcodeScanner, Base64ToGallery, // Importamos las librerias de Code QR
+   TextToSpeech
   ],
   bootstrap: [AppComponent],
 })
