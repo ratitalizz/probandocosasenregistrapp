@@ -34,7 +34,11 @@ const routes: Routes = [
   {
     path: 'tabs-profesor',
     loadChildren: () => import('./pages/tabs-profesor/tabs-profesor.module').then( m => m.TabsProfesorPageModule)
+  },  {
+    path: 'mapa',
+    loadChildren: () => import('./pages/mapa/mapa.module').then( m => m.MapaPageModule)
   },
+
 
 ];
 

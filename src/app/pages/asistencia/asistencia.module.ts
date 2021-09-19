@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { AsistenciaPageRoutingModule } from './asistencia-routing.module';
 
 import { AsistenciaPage } from './asistencia.page';
+import { AgmCoreModule } from '@agm/core';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    AsistenciaPageRoutingModule
+    AsistenciaPageRoutingModule,
+    AgmCoreModule,
   ],
   declarations: [AsistenciaPage]
 })
