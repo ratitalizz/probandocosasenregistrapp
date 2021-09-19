@@ -1,4 +1,13 @@
-  .contenedor{
+// SASS es un preprocesador de CSS 100% compatible
+//1. styles.css -> styles.scss
+//2. Modulariza -> Divide tu Hoja de estilos en varios archivos
+//3. importa desde in archivo principal
+//4. Compila
+
+@import "components/mixins";
+
+
+.contenedor{
     background: #fff;
   }
 
@@ -15,6 +24,7 @@
 
   .boton-primario{
     color: var(--ion-color-blanco);
+    @include btn-lindo;
   }
 
   .alerta-error{
