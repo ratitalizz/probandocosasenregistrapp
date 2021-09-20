@@ -8,17 +8,37 @@
 
 :root {
 
-  /** Colores VIVO DUOC **/
-  --ion-color-primario:#fcb720;
-  --ion-color-primario-claro:#fed500;
-  --ion-color-secundario:#012c56;
-  --ion-color-terciario:#fe6d00;
-  --ion-color-hover: #5a80a5;
-  --ion-color-negro:#000;
-  --ion-color-blanco:#fff;
-  --ion-color-gris:#1e252a;
-  --ion-color-gris-oscuro:#121212;
+  /** Colores**/
+  --ion-color-primario:#C5001A;
+  --ion-color-primario-claro:#E4E3DB;
+  --ion-color-secundario:#113743;
+  --ion-color-terciario:#C5BEBA;
+
+
+  // Elegante moderno
+  --ion-color-hover: #2F2E33; // Blue-black
+  --ion-color-negro:#D5D6D2; // Cool gray
+  --ion-color-blanco:#FFFFFF; //Blanco
+  --ion-color-cobalt: #3A5199; // Cobat
+
+  // Más allá del Negro y blanco
+  --ion-color-a:#31A2AC;
+  --ion-color-a:#AF1C1C;
+  --ion-color-a:#F0EFF0;
+  --ion-color-a:#2F2F28;
   
+  //Industrial a cargo
+  --ion-color-a: #20232A;
+  --ion-color-a: #ACBEBE;
+  --ion-color-a:#F4F4EF;
+  --ion-color-a:#A01D26;
+
+  // Profesional y Tradicional
+  --ion-color-a: #962715;
+  --ion-color-a:#FFFFFF;
+  --ion-color-a:#1E1E20;
+  --ion-color-a:#BBC3C6;
+
   /** Colores de Alerta **/
   --ion-color-texto-alerta:#721c24;
   --ion-color-borde-alerta:#f5c6cb;
