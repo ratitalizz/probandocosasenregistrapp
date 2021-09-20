@@ -26,7 +26,7 @@ import { TextToSpeech } from '@ionic-native/text-to-speech/ngx'
   ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
    ,BarcodeScanner, Base64ToGallery, // Importamos las librerias de Code QR
-   TextToSpeech
+   TextToSpeech, // Importamos TTS
   ],
   bootstrap: [AppComponent],
 })

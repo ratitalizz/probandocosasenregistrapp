@@ -4,11 +4,21 @@
 //3. importa desde in archivo principal
 //4. Compila
 
-@import "components/mixins";
+@import "../../components/mixins";
+@import "../../../theme/style.css";
 
+  .background-transparencia{
+    @include black-block;
+  }
 
-.contenedor{
-    background: #fff;
+  .img-background{
+    @include background-app;
+  }
+
+ .contenedor{
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
   }
 
   .titulo{
@@ -18,22 +28,26 @@
   }
 
   .formulario-login__item{
-    //border-radius: 20px;
-    margin-top: 20px;
+    @include input-primario;
+    margin-top: 30px;
   }
 
   .boton-primario{
-    color: var(--ion-color-blanco);
-    @include btn-lindo;
+    @include btn-primario;
+    margin-top: 45px;
+  }
+
+  .boton-terciario{
+    @include btn-terciario;
   }
 
   .alerta-error{
-    color: var(--ion-color-texto-alerta);
-    background: var(--ion-color-fondo-alerta);
-    border-color: var(--ion-color-borde-alerta);
-    margin-bottom: 5px;
+    color: var(--ion-color-blanco);
+    font-size: 10px;
+    width: 100%;
+    position: absolute;
   }
 
   .mensaje-error{
-    padding: 3px;
+    margin: auto;
   }

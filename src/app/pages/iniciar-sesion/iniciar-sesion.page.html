@@ -1,20 +1,19 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Iniciar Sesión</ion-title>
+    <ion-title class="fuente-titulo">Iniciar sesión</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-
+  <div class="background-transparencia"></div>
+  <img class="img-background" src="../../../assets/img/Backgrounds/Login.png" alt="Imagen de fondo login">
   <div class="contenedor">
-    <div class="titulo">Formulario Ingreso de Datos</div>
     <!-- Se guarde al enviar mediante submit-->
     <form class="formulario-login" action="#" method="POST" [formGroup]="loginForm" (ngSubmit)="iniciarSesion(loginForm.value)">
       <!-- Etiqueta Flotante -->
       <!-- inputs de formulario -->
-      <ion-item class="formulario-login__item">
-        <ion-label class="formulario-login__label" position="floating">Nombre Usuario</ion-label>
-        <ion-input class="formulario-login__input" placeholder="Ingrese su Nombre de Usuario" formControlName="username">
+      <ion-item lines="none" class="formulario-login__item">
+        <ion-input class="formulario-login__input" placeholder="Usuario" formControlName="username">
           <ion-icon *ngIf="username.invalid && (username.dirty || username.touched)" color="danger" size="small" name="warning" ></ion-icon>
           <ion-icon *ngIf="username.valid" color="secondary" size="small" name="checkmark-circle" ></ion-icon>
         </ion-input>
@@ -42,9 +41,8 @@
 
       </div>
       
-      <ion-item class="formulario-login__item">
-        <ion-label class="formulario-login__label" position="floating">Contraseña</ion-label>
-        <ion-input class="formulario-login__input" type="password" placeholder="Ingrese su Contraseña" formControlName="password">
+      <ion-item lines="none" class="formulario-login__item">
+        <ion-input class="formulario-login__input" type="password" placeholder="Contraseña" formControlName="password">
           <ion-icon *ngIf="password.invalid && (password.dirty || password.touched)" color="danger" size="small" name="warning" ></ion-icon>
           <ion-icon *ngIf="password.valid" color="secondary" size="small" name="checkmark-circle" ></ion-icon>
         </ion-input>
@@ -73,26 +71,27 @@
       </div>
 
       <!-- Botones de formulario -->
-      <ion-button class="boton-primario" icon-left type="submit" [disabled]="!loginForm.valid">
-        <ion-icon name="bed-outline"></ion-icon>
+      <ion-button class="boton-primario" icon-left type="submit" > <!--[disabled]="!loginForm.valid"-->
         <!-- *ngIf="password.valid && username.valid" 
         
           Pienso cambiar el color del botón al hacer válido el form
         -->
-        Iniciar Sesión
+        Ingresar
       </ion-button>
     </form>
 
     <!-- Sección olvidó su pass -->
     <div>
-      <ion-button fill="clear" (click)="recuperarCuenta()">
-        olvidaste tu pass uwu
+      <ion-button class="boton-terciario" fill="clear" (click)="recuperarCuenta()">
+        ¿Olvidaste tu contraseña?
       </ion-button>
     </div>
 
   </div>
 
   <ion-footer>
-
+    <ion-label>
+      Cyber-Life todos los derechos reservados.
+    </ion-label>
   </ion-footer>
 </ion-content>

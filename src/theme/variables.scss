@@ -14,14 +14,17 @@
   ///////////////////////////////////
 
   --ion-color-primario:#1E1E20;
+  --ion-color-primario-claro:#242426;
   --ion-color-secundario:#BBC3C6;
   --ion-color-terciario: #962715;
   --ion-color-blanco:#FFFFFF;
+  --ion-color-negro:#000;
+  --ion-color-negro-transparente:#00000099; // Negro con 60% de opacidad
 
   //////////////////////////////////
   // Colores de Alerta de error
   /////////////////////////////////
-  
+
   --ion-color-texto-alerta:#721c24;
   --ion-color-borde-alerta:#f5c6cb;
   --ion-color-fondo-alerta:#f8d7da;
