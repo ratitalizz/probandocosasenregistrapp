@@ -32,6 +32,18 @@
     margin-top: 30px;
   }
 
+/*
+  .formulario-login__input{
+    @include input-primario;
+  }
+
+  */
+  /*
+  .formulario-login__icon{
+    text-align: start
+  }
+
+  */
   .boton-primario{
     @include btn-primario;
     margin-top: 45px;

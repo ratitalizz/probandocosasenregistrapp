@@ -95,11 +95,15 @@
 @mixin input-primario {
     display: inline-block;
     --background: none;
-    color: var(--ion-color-blanco);
+    width: 80%;
+    height: 35px;
+    margin: auto;
     border: 1px solid var(--ion-color-secundario);
     border-radius: 20px;
-    width: 80%;
+    color: var(--ion-color-blanco);
+    display: flex;
     text-align: center;
+    justify-items: center;
 
     &::placeholder{
         color: var(--ion-color-secundario);
