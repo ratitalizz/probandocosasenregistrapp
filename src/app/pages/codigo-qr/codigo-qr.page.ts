@@ -19,7 +19,7 @@ export class CodigoQRPage implements OnInit {
 
   ngOnInit() {
   }
-
+  
   crearCodigo(){
     this.codigoCreado = this.qrData;
   }

@@ -27,6 +27,16 @@
     padding: 25px;
   }
 
+  .contenedor-header__titulo{
+    width: 80%;
+    margin: auto;
+    font-size: 50px;
+  }
+
+  .contenedor-header__logo{
+    width: 40%;
+  }
+
   .formulario-login__item{
     @include input-primario;
     margin-top: 30px;
@@ -38,19 +48,26 @@
   }
 
   */
-  /*
+
   .formulario-login__icon{
-    text-align: start
+    position: absolute;
   }
 
-  */
   .boton-primario{
     @include btn-primario;
-    margin-top: 45px;
+    margin-top: 30px;
   }
 
   .boton-terciario{
     @include btn-terciario;
+    margin-top: 30px;
+  }
+
+  .linea-blanca{
+    margin: auto;
+    margin-top: 20px;
+    border-bottom: 1px solid var(--ion-color-blanco);
+    width: 50%;
   }
 
   .alerta-error{
@@ -62,4 +79,21 @@
 
   .mensaje-error{
     margin: auto;
+  }
+
+  .creditos{
+    text-align: center;
+  }
+
+  .redes-sociales{
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    margin: auto;
+  }
+
+  .redes-sociales__btn{
+    color:var(--ion-color-primario);
+    margin-bottom: 10px;
   }

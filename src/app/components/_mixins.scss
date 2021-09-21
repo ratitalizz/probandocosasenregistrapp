@@ -78,7 +78,8 @@
     text-decoration: none;
     --background: none;
     color: var(--ion-color-blanco);
-    width: 80%;
+    font-size: 10px;
+    width: 60%;
     height: 35px;
 
     // & Hereda del padre
@@ -95,8 +96,8 @@
 @mixin input-primario {
     display: inline-block;
     --background: none;
-    width: 80%;
-    height: 35px;
+    width: 75%;
+    height: 40px;
     margin: auto;
     border: 1px solid var(--ion-color-secundario);
     border-radius: 20px;
