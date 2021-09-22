@@ -59,9 +59,8 @@ export class IniciarSesionPage{
           La pass debe 
           Minimo 8 caracteres
           Al menos una letra mayúscula
-          Al menos una letra minucula
+          Al menos una letra minuscula
           Al menos un dígito
-          No espacios en blanco
           Al menos 1 caracter especial
         */
       ]))
@@ -85,10 +84,10 @@ export class IniciarSesionPage{
     ////////////////////////////////////////
 
     // Alerta de confirmación
-    async messageAlert(){
+    async messageAlert(titulo, mensaje){
       const alert = await this.alertController.create({
-        header:"Holi",
-        message: "a",
+        header:titulo,
+        message: mensaje,
         buttons: ["OK"],
       })
       await alert.present();
@@ -143,11 +142,11 @@ export class IniciarSesionPage{
 
   recuperarCuenta(){
     this.router.navigate(['/recuperar-cuenta'])
+    //this.router.navigate(['/codigo-qr'])
   }
 
   // Agrego métodos get para validar el Formulario
   get username(){ return this.loginForm.get('username'); }
   get password(){ return this.loginForm.get('password'); }
-
 
 }

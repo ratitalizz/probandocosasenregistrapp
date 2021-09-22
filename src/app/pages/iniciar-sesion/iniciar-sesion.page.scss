@@ -7,13 +7,16 @@
 @import "../../components/mixins";
 @import "../../../theme/style.css";
 
-  .background-transparencia{
-    @include black-block;
+
+  // Imagen de fondo de la APP
+  .img-background{
+    --background: url(../../../assets/img/Backgrounds/profe.png) 0 0/100% 100% no-repeat;
   }
 
-  .img-background{
-    @include background-app;
-  }
+// Zona de header
+.toolbar-primaria__titulo{
+  text-align: center;
+}
 
  .contenedor{
     text-align: center;
@@ -21,15 +24,9 @@
     padding-bottom: 50px;
   }
 
-  .titulo{
-    background-color: var(--ion-color-primario);
-    color: var(--ion-color-negro);
-    padding: 25px;
-  }
-
   .contenedor-header__titulo{
-    width: 80%;
-    margin: auto;
+    color: var(--ion-color-blanco);
+    padding: 250x;
     font-size: 50px;
   }
 
@@ -38,16 +35,10 @@
   }
 
   .formulario-login__item{
-    @include input-primario;
+    @include form-label-primario;
     margin-top: 30px;
   }
 
-/*
-  .formulario-login__input{
-    @include input-primario;
-  }
-
-  */
 
   .formulario-login__icon{
     position: absolute;
@@ -55,12 +46,12 @@
 
   .boton-primario{
     @include btn-primario;
-    margin-top: 30px;
+    margin-top: 15px;
   }
 
   .boton-terciario{
     @include btn-terciario;
-    margin-top: 30px;
+    margin-top: 15px;
   }
 
   .linea-blanca{
@@ -70,6 +61,8 @@
     width: 50%;
   }
 
+
+  // Errores de formulario
   .alerta-error{
     color: var(--ion-color-blanco);
     font-size: 10px;
@@ -81,8 +74,13 @@
     margin: auto;
   }
 
+
+
+  // Zona de footer
   .creditos{
     text-align: center;
+    margin-top: 20px;
+    color: var(--ion-color-secundario);
   }
 
   .redes-sociales{
@@ -94,6 +92,9 @@
   }
 
   .redes-sociales__btn{
-    color:var(--ion-color-primario);
-    margin-bottom: 10px;
+    --color: var(--ion-color-blanco);
+  }
+
+  .toolbar-primaria{
+    --background: var(--ion-color-primario);
   }
