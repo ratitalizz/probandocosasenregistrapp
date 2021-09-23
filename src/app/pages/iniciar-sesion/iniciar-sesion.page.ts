@@ -1,4 +1,5 @@
-import { Component} from '@angular/core';
+// Importamos el componente OnInit
+import { Component, OnInit} from '@angular/core';
 
 //Importamos el componente de manejo de forms
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
@@ -15,20 +16,47 @@ import { ToastController } from '@ionic/angular';
 //Importamos el Alert 
 import { AlertController } from '@ionic/angular';
 
+
+
+
 @Component({
   selector: 'app-iniciar-sesion',
   templateUrl: './iniciar-sesion.page.html',
   styleUrls: ['./iniciar-sesion.page.scss'],
 })
 
-export class IniciarSesionPage{
+export class IniciarSesionPage implements OnInit{
 
   // Creamos atributos de clase
-  nombreUsuario:String;
-  contrasenia:String;
+  //nombreUsuario:String;
+  //contrasenia:String;
 
   // Creamos un FormGroup
   loginForm: FormGroup;
+
+    //Creamos una lista de usuarios para el login
+    listaUsuarios = [
+      {
+        nombreUsuario: "Jorge",
+        contrasenia: "RegistrAPP69!",
+        tipoUsuario:2
+      },
+      {
+        nombreUsuario: "Barbara",
+        contrasenia: "RegistrAPP69!",
+        tipoUsuario:2
+      },
+      {
+        nombreUsuario: "Matias",
+        contrasenia: "RegistrAPP69!",
+        tipoUsuario:2
+      },
+      {
+        nombreUsuario: "Freddy",
+        contrasenia: "RegistrAPP69!",
+        tipoUsuario:1
+      },
+    ]
 
 
   // Inicializamos el contructor con un router y un navControl
@@ -66,6 +94,24 @@ export class IniciarSesionPage{
       ]))
     });
   }
+
+ngOnInit(){
+  this.guardar();
+}
+
+
+
+
+    //Creación de métodos
+    guardar(){
+      var datos = this.listaUsuarios;
+      //Guardamos en una variable de Local Storage la lista de usuarios
+      localStorage.setItem('usuarios',JSON.stringify(datos));
+    }
+
+    
+  
+
 
     // Función asincróna para personalizar mi Toast e invocarlo
     async toastAlert(titulo, mensaje, duracion){
