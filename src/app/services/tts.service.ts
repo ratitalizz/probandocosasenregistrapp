@@ -34,7 +34,7 @@ export class TtsService {
 
   ayudaScanearQR(){
     this._tts.speak({
-      text:'Hola bienvenido, yo soy tu asistente virtual, a continuación presione el botón Escanear QR, se abrirá la cámara de tu dispositivo móvil y registrará tu asistencia al cuadrar el código entregado por tu profesor.',
+      text:'Hola bienvenido, yo soy tu asistente virtual, a continuación presione, el botón Escanear QR, se abrirá la cámara de tu dispositivo móvil y registrará tu asistencia al cuadrar el código entregado por tu profesor.',
       locale:'es-CL', //Idioma
       rate:1
       // Función de flecha que nos indica si funciona o no el método

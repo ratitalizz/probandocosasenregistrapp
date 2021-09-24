@@ -21,6 +21,9 @@ export class AsistenciaPage implements OnInit {
   ) { }
 
   ngOnInit() {
+    if(this.codigoScaneado!=null && this.codigoScaneado!=""){
+      this._tts.asistenciaRegistrada();
+    }
   }
 
   asistente(){
@@ -34,7 +37,6 @@ export class AsistenciaPage implements OnInit {
       this.codigoScaneado = barcodeData.text;
       }
     )
-    this._tts.asistenciaRegistrada();
   }
 
 }
