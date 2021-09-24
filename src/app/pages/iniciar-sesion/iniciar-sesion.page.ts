@@ -183,11 +183,11 @@ export class IniciarSesionPage implements OnInit{
       if(usuario.nombreUsuario == username && usuario.contrasenia == password){
         valida = true;
         if(usuario.tipoUsuario == 1){
-          //Ingresado como profesor
-          alert('Ingresado profesor');
+          //Ingresado como profesor enviando un parametro
+          this.router.navigate(['/inicio/',username]);
         }else if(usuario.tipoUsuario == 2){
           //Ingresado como alumno
-          alert('Ingresado alumno!');
+          this.router.navigate(['tabs-alumno/inicio']);
         }
       }
     }
@@ -196,10 +196,9 @@ export class IniciarSesionPage implements OnInit{
 
   // Método que iniciar sesión al clickear el botón
   validarIngreso(credenciales){
-
     //Validamos si encontró Match
     if(this.iniciarSesion(credenciales.username, credenciales.password)){
-
+      this.toastAlert('Ingresando ...','', 1000);
     }else{
       this.toastAlert('¡Nombre de usuario o contraseña incorrectos!','Porfavor vuelva a intentarlo.', 2000);
     }
