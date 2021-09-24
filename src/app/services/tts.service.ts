@@ -43,5 +43,16 @@ export class TtsService {
     );
   }
 
+  asistenciaRegistrada(){
+    this._tts.speak({
+      text:'Tu asistencia ha sido registrada.',
+      locale:'es-CL', //Idioma
+      rate:1
+      // Función de flecha que nos indica si funciona o no el método
+    }).then(()=>console.log('Funciona'))
+    .catch((resp:any)=>console.error(resp) 
+    );
+  }
+
 
 }

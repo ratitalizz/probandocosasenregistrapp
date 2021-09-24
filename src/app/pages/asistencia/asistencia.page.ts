@@ -34,6 +34,7 @@ export class AsistenciaPage implements OnInit {
       this.codigoScaneado = barcodeData.text;
       }
     )
+    this._tts.asistenciaRegistrada();
   }
 
 }
