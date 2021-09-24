@@ -7,8 +7,8 @@
 <ion-content class="img-background">
   <div class="instrucciones">
     <ion-label class="instrucciones__label">Genere un código QR <br> para registrar las asistencias.</ion-label>
-    <ion-button class="instrucciones__btn" fill="clear">
-      <ion-icon class="instrucciones__icon" slot="icon-only" name="logo-instagram"></ion-icon>
+    <ion-button class="instrucciones__btn" fill="clear" (click)="asistente()">
+      <ion-icon class="instrucciones__icon" slot="icon-only" name="play"></ion-icon>
     </ion-button>
   </div>
   <!-- Textbox para ingresar datos del Código QR -->
@@ -16,12 +16,14 @@
     <ion-input type="text" placeholder="Ingrese datos" [(ngModel)]="qrData"></ion-input>
   </ion-item>
 
-  <!-- Botón para generar un código QR -->
-  <ion-button full color="primary" (click)="crearCodigo()">
-    <ion-icon name="barcode"></ion-icon>
-    Generar
-  </ion-button>
-
+  <div class="contenedor-btn">
+    <!-- Botón para generar un código QR -->
+    <ion-button class="btn-generar" full (click)="crearCodigo()">
+      <ion-icon name="barcode"></ion-icon>
+      Generar
+    </ion-button>
+  </div>
+<!-- Scanear Código -->
   <button ion-button full icon-left (click)="scannearCodigo()">
     <ion-icon name="qr-scanner"></ion-icon>
     Escanea el Código
@@ -30,12 +32,12 @@
   <!-- Sección Crear código -->
   <ion-card *ngIf="codigoCreado" class="contenedor-qr">
     <div class="contenedor-qr__item">
-    <ngx-qrcode  [elementType]='elementType' [value]="codigoCreado"></ngx-qrcode>
-    <ion-card-content>
-      <p>Código generado para :</p>
-      <p>{{ codigoCreado }}</p>
-    </ion-card-content>
-  </div>
+      <ngx-qrcode [elementType]='elementType' [value]="codigoCreado"></ngx-qrcode>
+      <ion-card-content>
+        <p>Código generado para :</p>
+        <p>{{ codigoCreado }}</p>
+      </ion-card-content>
+    </div>
   </ion-card>
 
   <ion-card *ngIf="codigoScaneado">

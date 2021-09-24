@@ -184,7 +184,7 @@ export class IniciarSesionPage implements OnInit{
         valida = true;
         if(usuario.tipoUsuario == 1){
           //Ingresado como profesor enviando un parametro
-          this.router.navigate(['/inicio/',username]);
+          this.router.navigate(['/tabs-profesor/inicio/',username]);
         }else if(usuario.tipoUsuario == 2){
           //Ingresado como alumno
           this.router.navigate(['tabs-alumno/inicio']);

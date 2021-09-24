@@ -60,16 +60,16 @@
 @mixin btn-secundario{
     display: inline-block;
     text-decoration: none;
-    --background: var(--ion-color-primario);
+    --background: var(--ion-color-terciario);
     color: var(--ion-color-blanco);
 
     // & Hereda del padre
     &:focus {
-        --background: var(--ion-color-primario-claro);
+        --background: var(--ion-color-terciario);
     }
 
     &:hover{
-        --background: var(--ion-color-primario-claro);
+        --background: var(--ion-color-terciario);
     }
 }
 

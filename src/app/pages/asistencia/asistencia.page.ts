@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+//
+import { TtsService } from 'src/app/services/tts.service';
+
+// importamos BarCodeScanner
+import { BarcodeScanner } from '@ionic-native/barcode-scanner/ngx';
 
 @Component({
   selector: 'app-asistencia',
@@ -7,9 +12,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AsistenciaPage implements OnInit {
 
-  constructor() { }
+  codigoScaneado = null;
+
+  constructor
+  (
+    private _tts:TtsService,
+    private barcodeScanner: BarcodeScanner
+  ) { }
 
   ngOnInit() {
+  }
+
+  asistente(){
+    this._tts.ayudaScanearQR();
+  }
+
+  scannearCodigo(){
+    this.barcodeScanner.scan().then
+    (barcodeData => 
+      {
+      this.codigoScaneado = barcodeData.text;
+      }
+    )
   }
 
 }
