@@ -1,0 +1,42 @@
+@import "../../components/mixins";
+@import "../../../theme/style.css";
+
+
+// Imagen de fondo de la APP
+.img-background{
+    --background: url(../../../assets/img/Backgrounds/profe.png) 0 0/100% 100% no-repeat;
+}
+
+.instrucciones{
+    margin-top: 40px;
+    text-align: center;
+}
+
+.instrucciones__label{
+    display: block;
+}
+
+.instrucciones__btn{
+    margin-top: 10px;
+}
+
+.instrucciones__icon{
+    color: var(--ion-color-blanco);
+}
+
+.generar-codigo__label{
+    @include form-label-primario;
+}
+
+.contenedor-qr{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenedor-qr__item{
+    background: red;
+    height: 100%;
+    padding: auto;
+}
