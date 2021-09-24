@@ -187,7 +187,7 @@ export class IniciarSesionPage implements OnInit{
           this.router.navigate(['/tabs-profesor/inicio/',username]);
         }else if(usuario.tipoUsuario == 2){
           //Ingresado como alumno
-          this.router.navigate(['tabs-alumno/inicio']);
+          this.router.navigate(['/tabs-alumno/inicio/',username]);
         }
       }
     }
