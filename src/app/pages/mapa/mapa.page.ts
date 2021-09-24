@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MapaPage implements OnInit {
 
-  title: String = "Puente Asalto la lleva >///<"
+  title: String = "Duoc UC"
   lat: number = -33.598283;
   lng: number = -70.578328;
   constructor() { }

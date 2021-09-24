@@ -40,7 +40,7 @@ const routes: Routes = [
     loadChildren: () => import('./pages/mapa/mapa.module').then( m => m.MapaPageModule)
   },
   {
-    path: 'cambiar-contrasenia',
+    path: 'cambiar-contrasenia/:username',
     loadChildren: () => import('./pages/cambiar-contrasenia/cambiar-contrasenia.module').then( m => m.CambiarContraseniaPageModule)
   },
 

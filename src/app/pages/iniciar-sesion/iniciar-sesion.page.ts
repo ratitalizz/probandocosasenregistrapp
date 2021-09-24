@@ -96,7 +96,33 @@ export class IniciarSesionPage implements OnInit{
   }
 
   ngOnInit(){
-    this.guardarUsuario();
+      var datos = localStorage.getItem('usuarios');
+      if(datos!=null){
+      // LISTAR
+      datos = datos.replace('[','');
+      datos = datos.replace(']','');
+      datos = datos.split('},{').join('};{');
+      var arreglo_temp = datos.split(";");
+      var per;
+      var lista_temporal = new Array();
+      for (let index = 0; index < arreglo_temp.length; index++) {
+        var registro = arreglo_temp[index];
+        var usuarioGenerico = JSON.parse(registro);
+        per = {
+          nombreUsuario: usuarioGenerico.nombreUsuario,
+          contrasenia: usuarioGenerico.contrasenia,
+          tipoUsuario: usuarioGenerico.tipoUsuario
+        };
+  
+        lista_temporal.push(per);
+        this.listaUsuarios = lista_temporal;
+      }
+      localStorage.setItem('usuarios',JSON.stringify(lista_temporal));
+
+      }else{
+        this.guardarUsuario();      
+      }
+
   }
 
 

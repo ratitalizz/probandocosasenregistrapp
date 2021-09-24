@@ -8,12 +8,16 @@ import { CambiarContraseniaPageRoutingModule } from './cambiar-contrasenia-routi
 
 import { CambiarContraseniaPage } from './cambiar-contrasenia.page';
 
+//
+import { AppFormulariosModule } from 'src/app/app-formularios.module';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    CambiarContraseniaPageRoutingModule
+    CambiarContraseniaPageRoutingModule,
+    AppFormulariosModule
   ],
   declarations: [CambiarContraseniaPage]
 })
