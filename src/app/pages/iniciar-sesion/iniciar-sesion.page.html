@@ -20,7 +20,7 @@
 
       <!-- Se guarde al enviar mediante submit-->
       <form class="formulario-login" action="#" method="POST" [formGroup]="loginForm"
-        (ngSubmit)="iniciarSesion(loginForm.value)">
+        (ngSubmit)="validarIngreso(loginForm.value)">
         <!-- Etiqueta Flotante -->
         <!-- inputs de formulario -->
         <ion-item lines="none" class="formulario-login__item">

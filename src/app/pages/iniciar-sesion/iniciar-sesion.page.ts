@@ -95,23 +95,19 @@ export class IniciarSesionPage implements OnInit{
     });
   }
 
-ngOnInit(){
-  this.guardar();
-}
+  ngOnInit(){
+    this.guardarUsuario();
+  }
 
 
 
 
-    //Creación de métodos
-    guardar(){
+    //Creación de método guardar usuario
+    guardarUsuario(){
       var datos = this.listaUsuarios;
       //Guardamos en una variable de Local Storage la lista de usuarios
       localStorage.setItem('usuarios',JSON.stringify(datos));
     }
-
-    
-  
-
 
     // Función asincróna para personalizar mi Toast e invocarlo
     async toastAlert(titulo, mensaje, duracion){
@@ -172,17 +168,40 @@ ngOnInit(){
   }
 
 
-  // Método que iniciar sesión al clickear el botón
-  iniciarSesion(credenciales){
-    // Falta validar 
-    if(credenciales.username == "Jorge" && credenciales.password == "RegistrAPP69!"){
-      this.router.navigate(['/tabs-alumno/inicio']);
-    }else if(credenciales.username == "Freddy" && credenciales.password == "RegistrAPP69!"){
-      this.router.navigate(['/tabs-profesor/inicio']);
+  iniciarSesion(username:String, password:String){
+    var datos = localStorage.getItem('usuarios');
+    let valida = false;
+    // LISTAR
+    datos = datos.replace('[','');
+    datos = datos.replace(']','');
+    datos = datos.split('},{').join('};{');
+    var arreglo_temp = datos.split(";");
+    for (let index = 0; index < arreglo_temp.length; index++) {
+      var registro = arreglo_temp[index];
+      var usuario = JSON.parse(registro);
+      // Validamos si el usuario coincide con nuestra mini BD
+      if(usuario.nombreUsuario == username && usuario.contrasenia == password){
+        valida = true;
+        if(usuario.tipoUsuario == 1){
+          //Ingresado como profesor
+          alert('Ingresado profesor');
+        }else if(usuario.tipoUsuario == 2){
+          //Ingresado como alumno
+          alert('Ingresado alumno!');
+        }
+      }
     }
-    else{
-      console.log("F");
-      this.toastAlert("Credenciales INCORRECTAS", "intentelo de nuevo", 2000);
+    return valida;
+  }
+
+  // Método que iniciar sesión al clickear el botón
+  validarIngreso(credenciales){
+
+    //Validamos si encontró Match
+    if(this.iniciarSesion(credenciales.username, credenciales.password)){
+
+    }else{
+      this.toastAlert('¡Nombre de usuario o contraseña incorrectos!','Porfavor vuelva a intentarlo.', 2000);
     }
   }
 
