@@ -15,6 +15,11 @@ import { Base64ToGallery } from '@ionic-native/base64-to-gallery/ngx';
 //Importar TTS
 import { TextToSpeech } from '@ionic-native/text-to-speech/ngx'
 
+// Importar AuthenGuard , Authentication y Storage
+import { AuthenticationService } from './services/authentication.service';
+import { AuthenGuardService } from './services/authen-guard.service';
+import { Storage } from '@ionic/storage';
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -27,6 +32,9 @@ import { TextToSpeech } from '@ionic-native/text-to-speech/ngx'
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
    ,BarcodeScanner, Base64ToGallery, // Importamos las librerias de Code QR
    TextToSpeech, // Importamos TTS
+   AuthenGuardService, // AuthenGuard
+   AuthenticationService, // Authentication
+   Storage, // Storage
   ],
   bootstrap: [AppComponent],
 })

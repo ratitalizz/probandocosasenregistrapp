@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+//Importamos al guardián
+import { AuthenGuardService } from './services/authen-guard.service';
 
 const routes: Routes = [
   {
@@ -43,6 +45,15 @@ const routes: Routes = [
     path: 'cambiar-contrasenia/:username',
     loadChildren: () => import('./pages/cambiar-contrasenia/cambiar-contrasenia.module').then( m => m.CambiarContraseniaPageModule)
   },
+  {
+    path: 'login',
+    loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
+  },
+  {
+    path: 'menu',
+    loadChildren: () => import('./pages/menu/menu.module').then( m => m.MenuPageModule), canActivate:[AuthenGuardService]
+  },
+
 
 
 ];
