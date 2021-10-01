@@ -53,6 +53,15 @@ const routes: Routes = [
     path: 'menu',
     loadChildren: () => import('./pages/menu/menu.module').then( m => m.MenuPageModule), canActivate:[AuthenGuardService]
   },
+  {
+    path: 'informacion',
+    loadChildren: () => import('./pages/informacion/informacion.module').then( m => m.InformacionPageModule)
+  },
+  {
+    path: '**',
+    loadChildren: () => import('./pages/p404/p404.module').then( m => m.P404PageModule)
+  },
+
 
 
 
